@@ -1,0 +1,44 @@
+<div class="page">
+  <header class="page-header">
+    <h1>My To-Do List</h1>
+    <span class="remaining">{{ remaining() }} remaining</span>
+  </header>
+
+  <div class="add-row">
+    <input
+      class="add-input"
+      type="text"
+      placeholder="Add a new task…"
+      [ngModel]="newText()"
+      (ngModelChange)="newText.set($event)"
+      (keydown)="onKeydown($event)"
+    />
+    <button class="btn btn-add" (click)="addItem()">Add</button>
+  </div>
+
+  @if (items().length === 0) {
+    <p class="empty">No tasks yet. Add one above!</p>
+  }
+
+  <ul class="todo-list">
+    @for (item of items(); track trackById($index, item)) {
+      <li class="todo-item" [class]="'status-' + item.status">
+        <span class="item-text" [class.done]="item.status === 'done'">{{ item.text }}</span>
+        <div class="item-controls">
+          <select
+            class="status-select"
+            [ngModel]="item.status"
+            (ngModelChange)="setStatus(item.id, $event)"
+          >
+            <option value="todo">To Do</option>
+            <option value="in-progress">In Progress</option>
+            <option value="done">Done</option>
+          </select>
+          <button class="btn btn-remove" (click)="removeItem(item.id)" aria-label="Remove task">
+            ✕
+          </button>
+        </div>
+      </li>
+    }
+  </ul>
+</div>

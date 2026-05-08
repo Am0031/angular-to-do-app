@@ -1,0 +1,58 @@
+<div class="recipes-page">
+
+  <div class="page-header">
+    <div class="page-header-text">
+      <h1>Recipe Book</h1>
+      <p class="subtitle">{{ recipes().length }} recipe{{ recipes().length === 1 ? '' : 's' }} saved</p>
+    </div>
+    <button class="btn-add" (click)="openAdd()">+ Add Recipe</button>
+  </div>
+
+  @if (recipes().length === 0) {
+    <div class="empty-state">
+      <div class="empty-icon">🍽️</div>
+      <p class="empty-title">No recipes yet</p>
+      <p class="empty-sub">Add your first recipe to get started.</p>
+      <button class="btn-add" (click)="openAdd()">+ Add Recipe</button>
+    </div>
+  }
+
+  <div class="recipe-grid">
+    @for (recipe of recipes(); track recipe.id) {
+      <div class="recipe-card">
+
+        <div class="card-image" (click)="openView(recipe)" role="button" tabindex="0">
+          <div class="card-img-bg"></div>
+          <img class="card-img" [src]="recipe.imageUrl" [alt]="recipe.name" />
+          <span class="card-category">{{ recipe.category }}</span>
+        </div>
+
+        <div class="card-body">
+          <h3 class="card-name" (click)="openView(recipe)">{{ recipe.name }}</h3>
+          <p class="card-desc">{{ recipe.description }}</p>
+          <div class="card-meta">
+            <span class="meta-pill">&#9201; {{ recipe.prepTime }}</span>
+            <span class="meta-pill">&#128101; {{ recipe.servings }} servings</span>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button class="btn-card" (click)="openView(recipe)">View</button>
+          <button class="btn-card btn-card--primary" (click)="openEdit(recipe)">Edit</button>
+        </div>
+
+      </div>
+    }
+  </div>
+
+  @if (modalOpen()) {
+    <app-recipe-modal
+      [recipe]="selectedRecipe()"
+      [startMode]="modalMode()"
+      (closeModal)="closeModal()"
+      (saveRecipe)="onSave($event)"
+      (deleteRecipe)="onDelete($event)"
+    />
+  }
+
+</div>

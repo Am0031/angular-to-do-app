@@ -1,0 +1,157 @@
+<div class="modal-backdrop" (click)="onBackdropClick($event)">
+  <div class="modal-card">
+
+    <!-- Header -->
+    <div class="modal-header">
+      <h2 class="modal-title">
+        @if (mode === 'add') { New Recipe }
+        @else if (mode === 'edit') { Edit Recipe }
+        @else { {{ recipe?.name }} }
+      </h2>
+      <button class="close-btn" (click)="closeModal.emit()" aria-label="Close">&#x2715;</button>
+    </div>
+
+    <!-- VIEW MODE -->
+    @if (mode === 'view' && recipe) {
+      <div class="modal-body">
+
+        <div class="view-image-wrap">
+          @if (!imgFailed) {
+            <img
+              class="view-img"
+              [src]="recipe.imageUrl"
+              [alt]="recipe.name"
+              (error)="imgFailed = true"
+            />
+          } @else {
+            <div class="img-fallback">{{ recipe.name[0] }}</div>
+          }
+          <span class="view-category-badge">{{ recipe.category }}</span>
+        </div>
+
+        <div class="view-content">
+          <p class="view-description">{{ recipe.description }}</p>
+
+          <div class="meta-strip">
+            <div class="meta-item">
+              <span class="meta-label">Prep Time</span>
+              <span class="meta-value">{{ recipe.prepTime }}</span>
+            </div>
+            <div class="meta-divider"></div>
+            <div class="meta-item">
+              <span class="meta-label">Servings</span>
+              <span class="meta-value">{{ recipe.servings }}</span>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h3 class="detail-heading">Ingredients</h3>
+            <ul class="ingredients-list">
+              @for (ing of recipe.ingredients; track ing) {
+                <li>{{ ing }}</li>
+              }
+            </ul>
+          </div>
+
+          <div class="detail-section">
+            <h3 class="detail-heading">Instructions</h3>
+            <p class="instructions-text">{{ recipe.instructions }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        @if (!showDeleteConfirm) {
+          <button class="btn btn-ghost-danger" (click)="showDeleteConfirm = true">Delete</button>
+          <button class="btn btn-primary" (click)="switchToEdit()">Edit Recipe</button>
+        } @else {
+          <span class="delete-confirm-label">Delete this recipe?</span>
+          <button class="btn btn-ghost" (click)="showDeleteConfirm = false">Cancel</button>
+          <button class="btn btn-danger" (click)="onDelete()">Yes, Delete</button>
+        }
+      </div>
+    }
+
+    <!-- EDIT / ADD MODE -->
+    @if (isFormMode) {
+      <div class="modal-body form-body">
+
+        @if (form.imageUrl) {
+          <div class="form-img-preview">
+            @if (!formImgFailed) {
+              <img [src]="form.imageUrl" alt="Preview" (error)="formImgFailed = true" />
+            } @else {
+              <div class="img-fallback small">Image failed to load</div>
+            }
+          </div>
+        }
+
+        <div class="form-grid">
+          <div class="field span-2">
+            <label for="f-name">Recipe Name</label>
+            <input id="f-name" [(ngModel)]="form.name" placeholder="e.g. Spaghetti Carbonara" />
+          </div>
+
+          <div class="field span-2">
+            <label for="f-desc">Short Description</label>
+            <input id="f-desc" [(ngModel)]="form.description" placeholder="A brief tagline for the recipe" />
+          </div>
+
+          <div class="field">
+            <label for="f-cat">Category</label>
+            <input id="f-cat" [(ngModel)]="form.category" placeholder="e.g. Italian, Dessert" />
+          </div>
+
+          <div class="field">
+            <label for="f-prep">Prep Time</label>
+            <input id="f-prep" [(ngModel)]="form.prepTime" placeholder="e.g. 30 mins" />
+          </div>
+
+          <div class="field">
+            <label for="f-serv">Servings</label>
+            <input id="f-serv" type="number" [(ngModel)]="form.servings" min="1" />
+          </div>
+
+          <div class="field span-2">
+            <label for="f-img">Image URL</label>
+            <input
+              id="f-img"
+              [(ngModel)]="form.imageUrl"
+              placeholder="https://images.unsplash.com/..."
+              (ngModelChange)="onFormImageChange()"
+            />
+          </div>
+
+          <div class="field span-2">
+            <label for="f-ing">Ingredients <span class="field-hint">(one per line)</span></label>
+            <textarea
+              id="f-ing"
+              [(ngModel)]="form.ingredientsText"
+              rows="7"
+              placeholder="400g spaghetti&#10;200g pancetta&#10;4 eggs&#10;..."
+            ></textarea>
+          </div>
+
+          <div class="field span-2">
+            <label for="f-inst">Instructions</label>
+            <textarea
+              id="f-inst"
+              [(ngModel)]="form.instructions"
+              rows="5"
+              placeholder="Describe the cooking steps..."
+            ></textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-ghost" (click)="closeModal.emit()">Cancel</button>
+        <button class="btn btn-primary" (click)="onSave()">
+          {{ mode === 'add' ? 'Save Recipe' : 'Save Changes' }}
+        </button>
+      </div>
+    }
+
+  </div>
+</div>

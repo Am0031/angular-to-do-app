@@ -1,0 +1,136 @@
+[
+  {
+    "id": 1,
+    "name": "Spaghetti Carbonara",
+    "description": "A classic Roman pasta with a silky egg and cheese sauce.",
+    "category": "Italian",
+    "prepTime": "25 mins",
+    "servings": 4,
+    "imageUrl": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=600&h=400&q=80",
+    "ingredients": [
+      "400g spaghetti",
+      "200g guanciale or pancetta",
+      "4 large eggs",
+      "100g Pecorino Romano, grated",
+      "50g Parmesan, grated",
+      "2 cloves garlic",
+      "Freshly ground black pepper",
+      "Salt for pasta water"
+    ],
+    "instructions": "Cook spaghetti in well-salted boiling water until al dente. Meanwhile, fry guanciale with garlic in a large pan until golden and crispy, then discard the garlic. Beat eggs with grated cheeses and plenty of black pepper in a bowl. Drain pasta, reserving a cup of pasta water. Remove the pan from heat, add pasta to the guanciale, then quickly stir in the egg mixture, tossing vigorously and adding splashes of pasta water to create a creamy, silky sauce. Serve immediately with extra cheese and black pepper."
+  },
+  {
+    "id": 2,
+    "name": "Chocolate Lava Cake",
+    "description": "Warm, gooey chocolate cakes with a molten centre — pure indulgence.",
+    "category": "Dessert",
+    "prepTime": "30 mins",
+    "servings": 6,
+    "imageUrl": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&h=400&q=80",
+    "ingredients": [
+      "200g dark chocolate (70%)",
+      "200g unsalted butter",
+      "200g caster sugar",
+      "4 large eggs",
+      "4 egg yolks",
+      "100g plain flour",
+      "Cocoa powder for dusting",
+      "Vanilla ice cream to serve"
+    ],
+    "instructions": "Preheat oven to 200°C. Grease six ramekins and dust with cocoa powder. Melt chocolate and butter together in a bain-marie, stirring until smooth. Whisk sugar, eggs, and yolks until pale and thick. Fold the chocolate mixture into the egg mixture, then sift in the flour and fold gently. Divide into ramekins and refrigerate for at least 30 minutes. Bake for 12 minutes until the edges are set but the centre still jiggles. Rest for 1 minute, then invert onto plates and serve immediately with ice cream."
+  },
+  {
+    "id": 3,
+    "name": "Classic Caesar Salad",
+    "description": "Crisp romaine, punchy dressing, crunchy croutons, and shaved Parmesan.",
+    "category": "Salad",
+    "prepTime": "20 mins",
+    "servings": 4,
+    "imageUrl": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&h=400&q=80",
+    "ingredients": [
+      "2 heads romaine lettuce, roughly torn",
+      "3 tbsp mayonnaise",
+      "2 tbsp lemon juice",
+      "1 tsp Worcestershire sauce",
+      "2 anchovy fillets, minced",
+      "2 cloves garlic, minced",
+      "50g Parmesan, shaved",
+      "2 thick slices sourdough bread, cubed",
+      "2 tbsp olive oil",
+      "Salt and pepper to taste"
+    ],
+    "instructions": "Make croutons by tossing bread cubes in olive oil with a pinch of salt, then bake at 180°C for 10–12 minutes until golden. Whisk together mayonnaise, lemon juice, Worcestershire, anchovy, and garlic to make the dressing — season well. Toss romaine with dressing until evenly coated. Add croutons and half the Parmesan and toss again. Serve topped with remaining Parmesan and a crack of black pepper."
+  },
+  {
+    "id": 4,
+    "name": "Chicken Tikka Masala",
+    "description": "Tender marinated chicken in a rich, aromatic tomato and cream sauce.",
+    "category": "Indian",
+    "prepTime": "45 mins",
+    "servings": 4,
+    "imageUrl": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=600&h=400&q=80",
+    "ingredients": [
+      "700g chicken breast, cubed",
+      "200ml plain yoghurt",
+      "2 tsp garam masala",
+      "2 tsp ground cumin",
+      "1 tsp turmeric",
+      "1 tsp chilli powder",
+      "400g tin chopped tomatoes",
+      "200ml double cream",
+      "2 onions, diced",
+      "4 cloves garlic, minced",
+      "2cm piece ginger, grated",
+      "2 tbsp oil",
+      "Fresh coriander to serve"
+    ],
+    "instructions": "Marinate chicken in yoghurt, half the spices, salt, and 1 tbsp oil for at least 30 minutes. Grill or pan-fry marinated chicken until lightly charred. In the same pan, fry onions until golden, then add garlic and ginger and cook for 2 minutes. Add remaining spices and toast briefly. Add tomatoes and simmer for 15 minutes. Stir in cream and return the cooked chicken. Simmer gently for 10 minutes until the sauce is thick and rich. Garnish with fresh coriander and serve with basmati rice or naan."
+  },
+  {
+    "id": 5,
+    "name": "Avocado Toast with Poached Eggs",
+    "description": "Creamy smashed avocado on sourdough with perfectly poached eggs.",
+    "category": "Breakfast",
+    "prepTime": "15 mins",
+    "servings": 2,
+    "imageUrl": "https://images.unsplash.com/photo-1541519227354-08fa5d50c820?auto=format&fit=crop&w=600&h=400&q=80",
+    "ingredients": [
+      "2 thick slices sourdough bread",
+      "2 ripe avocados",
+      "4 eggs",
+      "1 tbsp white wine vinegar",
+      "Juice of half a lemon",
+      "Chilli flakes to taste",
+      "Salt and pepper",
+      "Extra virgin olive oil to drizzle",
+      "Fresh dill or chives (optional)"
+    ],
+    "instructions": "Toast sourdough until golden. Halve and stone avocados, scoop into a bowl, and mash with lemon juice, salt, and pepper — keep it chunky. Bring a pan of water to a gentle simmer and add vinegar. Crack each egg into a small cup, swirl the water, and gently slide eggs in. Poach for 3 minutes for a runny yolk. Spread avocado generously on toast, top with a poached egg, drizzle with olive oil, and scatter chilli flakes and herbs. Serve immediately."
+  },
+  {
+    "id": 6,
+    "name": "Fish Tacos with Mango Salsa",
+    "description": "Crispy battered fish in warm tortillas with vibrant fresh mango salsa and lime crema.",
+    "category": "Mexican",
+    "prepTime": "35 mins",
+    "servings": 4,
+    "imageUrl": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=600&h=400&q=80",
+    "ingredients": [
+      "600g white fish fillets (cod or tilapia)",
+      "120g plain flour",
+      "1 tsp baking powder",
+      "150ml cold sparkling water",
+      "8 small corn tortillas",
+      "1 ripe mango, diced",
+      "1 small red onion, finely diced",
+      "1 red chilli, minced",
+      "Juice of 2 limes",
+      "Handful of fresh coriander",
+      "100ml soured cream",
+      "1 tsp garlic powder",
+      "Oil for frying",
+      "Salt and pepper"
+    ],
+    "instructions": "Make mango salsa by combining mango, red onion, chilli, lime juice, and coriander — season and refrigerate. Make lime crema by mixing soured cream with lime juice, garlic powder, and salt. For the batter, whisk flour and baking powder with sparkling water until just combined (lumps are fine). Season fish, dip in batter, and fry in hot oil at 180°C for 3–4 minutes per side until golden and crispy. Drain on paper towel. Warm tortillas in a dry pan. Assemble tacos with fish, mango salsa, lime crema, and extra coriander."
+  }
+]

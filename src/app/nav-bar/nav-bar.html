@@ -1,0 +1,21 @@
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" routerLink="/">TaskFlow</a>
+    <ul class="nav-links">
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >Home</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/todos" routerLinkActive="active">Tasks</a>
+      </li>
+      <li>
+        <a class="nav-link" routerLink="/recipes" routerLinkActive="active">Recipes</a>
+      </li>
+    </ul>
+  </div>
+</nav>
